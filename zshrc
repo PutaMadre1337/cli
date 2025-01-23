@@ -17,8 +17,8 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/fzf-tab/fzf-tab.zsh
 source ~/.zsh/zsh-fzf-history-search/zsh-fzf-history-search.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^P' history-substring-search-up
-bindkey '^N' history-substring-search-down
+  bindkey '^P' history-substring-search-up
+  bindkey '^N' history-substring-search-down
 
 source ~/.zsh/fzf.zsh
 source ~/.zsh/functions.zsh
