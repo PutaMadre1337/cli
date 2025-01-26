@@ -58,11 +58,10 @@ alias of='onefetch'
 
 # go
 alias gmt='go mod tidy'
-alias gmi='go mod init'
 alias grm='go run $(find . -iname main.go)'
 alias gb='go build $(find . -iname main.go)'
 
-function gmit {
+function gmi {
 if [ -z "$1" ]; then
     go mod init default
     go mod tidy
@@ -71,6 +70,7 @@ if [ -z "$1" ]; then
     go mod init "$1"
     go mod tidy
 }
+
 function newgo {
 if [ -z "$1" ]; then
     return 1
@@ -96,10 +96,10 @@ if [ -z "$1" ]; then
 
   echo "Go project '$1' created successfully."
 }
+
 function gbo {
     go build -o "$@" $(find . -iname main.go)
 }
-
 
 # directory navigation shortcuts
 alias ..='cd ..'
@@ -127,5 +127,6 @@ alias s='sudo'
 alias siy='sudo -i yazi $(pwd)'
 alias x='chmod +x'
 alias sx='sudo chmod +x'
-alias countlines='pwd && echo "Общее количество строк: $(cat $(fd -t file) | wc -l)"'
+alias tm='tammy'
+# alias countlines='pwd && echo "Общее количество строк: $(cat $(fd -t file) | wc -l)"'
 # alias countlines='start_time=$(date +%s.%N); pwd && echo "Общее количество строк: $(cat $(fd -t file) | wc -l)"; end_time=$(date +%s.%N); elapsed_time=$(echo "scale=3; ($end_time - $start_time) * 1000" | bc); echo "Время выполнения: $elapsed_time миллисекунд"'
