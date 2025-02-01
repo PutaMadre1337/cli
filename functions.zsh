@@ -63,7 +63,5 @@ function gbo {
 
 # cd autocmd
 function chpwd {
-  pwd
   eza -D -1 --show-symlinks --icons=auto
 }
-

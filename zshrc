@@ -1,10 +1,12 @@
 fastfetch
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"
 
 ####################################################################################
 
 export EDITOR="nvim"
 export PATH="$PATH:/home/username/.local/share/go/bin"
+
 # tammy
 export TREE_ENUMERATOR="rounded"
 export RELATIVE_PATH="true"
@@ -12,7 +14,7 @@ export DEFAULT_FORM="tree"
 
 ####################################################################################
 
-ZSH=/usr/share/oh-my-zsh/
+ZSH=/usr/share/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -25,7 +27,6 @@ source ~/.zsh/fzf.zsh
 source ~/.zsh/functions.zsh
 source <(fzf --zsh)
 
-source ~/.zsh/starship.zsh
 source ~/.zsh/zoxide.zsh
 
 ####################################################################################

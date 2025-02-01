@@ -1,18 +1,20 @@
 filenames:
-  cmd: {icon: {glyph:  }}
-  internal: {icon: {glyph:  }}
-
-  assets: {icon: {glyph:  }}
-  bin: {icon: {glyph:  }}
-
-  Github: {icon: {glyph:  }}
-  Coding: {icon: {glyph:  }}
+  Desktop: {icon: {glyph:  }}
+  Documents: {icon: {glyph:  }}
+  Development: {icon: {glyph:  }}
+  Downloads: {icon: {glyph:  }}
+  Pictures: {icon: {glyph:  }}
   Books: {icon: {glyph: 󱉟 }}
   Notes: {icon: {glyph:  } }
   Coding: {icon: {glyph:  }}
+
+  assets: {icon: {glyph:  }}
+  bin: {icon: {glyph:  }}
+  cmd: {icon: {glyph:  }}
+  internal: {icon: {glyph:  }}
   Golang: {icon: {glyph:  }}
+  Github: {icon: {glyph:  }}
+  Coding: {icon: {glyph:  }}
   archive: {icon: {glyph:  }}
   CLI: {icon: {glyph:  }}
   Web: {icon: {glyph: 󰖟 }}
-
-  # Golang.md: { icon: {glyph: }  }
