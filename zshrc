@@ -4,6 +4,7 @@ eval "$(starship init zsh)"
 
 ####################################################################################
 
+export GTK_USE_PORTAL=1
 export EDITOR="nvim"
 export PATH="$PATH:/home/username/.local/share/go/bin"
 
@@ -16,18 +17,16 @@ export DEFAULT_FORM="tree"
 
 ZSH=/usr/share/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+source ~/.zsh/functions.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/fzf-tab/fzf-tab.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
   bindkey '^N' history-substring-search-down
 
 source ~/.zsh/fzf.zsh
-source ~/.zsh/functions.zsh
 source <(fzf --zsh)
-
-source ~/.zsh/zoxide.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/fzf-tab/fzf-tab.zsh
 
 ####################################################################################
 
@@ -56,7 +55,6 @@ alias ps='yay -Ps'
 alias n='nvim'
 alias se='sudoedit'
 alias nh='nvim ~/.config/hypr/'
-alias nf='nvim ~/.config/fish/'
 alias nfc='nvim ~/.zshrc'
 
 # git
@@ -82,7 +80,6 @@ alias rm='rm -rf'
 alias te='trans en:ru -e bing'
 alias tr='trans ru:en -e bing'
 alias ff='fastfetch'
-alias f='fish'
 alias t='touch'
 alias si='sudo -i'
 alias s='sudo'
