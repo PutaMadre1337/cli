@@ -1,13 +1,13 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  // "logo": {
-  //   "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | shuf -n 1)",
-  //   "height": 18,
-  //   "padding": {
-  //     "right": 10,
-  //     "top": 3
-  //   }
-  // },
+  "logo": {
+    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | shuf -n 1)",
+    "height": 18,
+    "padding": {
+      "right": 10,
+      "top": 3
+    }
+  },
   "general": {
     "multithreading": true
   },

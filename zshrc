@@ -3,9 +3,9 @@ fastfetch
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
-if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-  tmux attach || exec tmux new-session && exit;
-fi
+# if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+#   tmux attach || exec tmux new-session && exit;
+# fi
 
 ####################################################################################
 
@@ -17,6 +17,7 @@ export PATH="$PATH:/home/username/.local/share/go/bin"
 export TREE_ENUMERATOR="rounded"
 export RELATIVE_PATH="true"
 export DEFAULT_FORM="tree"
+alias tm='tammy'
 
 ####################################################################################
 
@@ -97,6 +98,5 @@ alias s='sudo'
 alias siy='sudo -i yazi $(pwd)'
 alias x='chmod +x'
 alias sx='sudo chmod +x'
-alias tm='tammy'
 # alias countlines='pwd && echo "Общее количество строк: $(cat $(fd -t file) | wc -l)"'
 # alias countlines='start_time=$(date +%s.%N); pwd && echo "Общее количество строк: $(cat $(fd -t file) | wc -l)"; end_time=$(date +%s.%N); elapsed_time=$(echo "scale=3; ($end_time - $start_time) * 1000" | bc); echo "Время выполнения: $elapsed_time миллисекунд"'
