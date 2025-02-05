@@ -8,11 +8,13 @@ export FZF_CTRL_T_OPTS="
 
 export FZF_CTRL_R_OPTS="
   --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)'
+  --tmux 90%
   # --header 'CTRL-Y to copy command into clipboard'
   --color header:italic"
 
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
+  --tmux 90%
   --multi --bind 'ctrl-d:become(rm -rf {+})'
   --multi --bind 'ctrl-o:execute(nvim {+})'
   --preview 'eza --icons=auto --tree {}'"

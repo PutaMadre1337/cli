@@ -14,6 +14,7 @@ function rf() {
   fzf --ansi \
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
       --delimiter : \
+      --tmux 70% \
       --info=inline \
       --preview 'bat --color=always {1} --highlight-line {2}' \
       --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
@@ -26,6 +27,7 @@ function qrg() {
   pacman -Q |
   fzf --ansi \
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
+      --tmux 70% \
       --delimiter : \
       --border=rounded \
       --header 'C-y - copy name, C-r - yay -Rns' \
