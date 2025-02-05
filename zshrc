@@ -77,6 +77,7 @@ alias srm='sudo rm -rf'
 alias rm='rm -rf'
 
 # other
+alias lr='lazydocker'
 alias te='trans en:ru -e bing'
 alias tr='trans ru:en -e bing'
 alias ff='fastfetch'

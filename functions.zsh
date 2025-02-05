@@ -9,15 +9,28 @@ function y() {
 }
 
 # Fzf
-function rgg() {
+function rf() {
   rg --color=always --line-number --no-heading --smart-case "${*:-}" |
   fzf --ansi \
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
       --delimiter : \
+      --info=inline \
       --preview 'bat --color=always {1} --highlight-line {2}' \
       --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
       --border=rounded \
-      --bind 'ctrl-o:execute(nvim {1} +{2})'
+      --header 'C-o - open file in nvim' \
+      --multi --bind 'ctrl-o:execute(nvim {1} +{2})'
+}
+
+function qrg() {
+  pacman -Q |
+  fzf --ansi \
+      --color "hl:-1:underline,hl+:-1:underline:reverse" \
+      --delimiter : \
+      --border=rounded \
+      --header 'C-y - copy name, C-r - yay -Rns' \
+      --multi --bind 'ctrl-r:execute-silent(yay -Rns --noconfirm {1} +{2})' \
+      --multi --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)'
 }
 
 # Golang

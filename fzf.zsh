@@ -17,20 +17,10 @@ export FZF_ALT_C_OPTS="
   --multi --bind 'ctrl-o:execute(nvim {+})'
   --preview 'eza --icons=auto --tree {}'"
 
-export FZF_COMPLETION_TRIGGER='~~'
 export FZF_COMPLETION_OPTS='--border --info=rounded'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
 export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
 
-_fzf_comprun() {
-  local command=$1
-  shift
-
-  case "$command" in
-    cd)           fzf --preview 'eza --icons=auto --tree {} | head -200'   "$@" ;;
-    nvim|n)       fzf --preview "'eza --icons=auto --tree {}' --walker dir,follow" "$@" ;;
-    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
-  esac
-}
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=auto --tree $realpath'
+zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'bat -n --color=always $realpath'
+zstyle ':fzf-tab:complete:y:*' fzf-preview 'eza --icons=auto --tree $realpath'
