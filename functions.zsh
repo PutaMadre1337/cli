@@ -31,8 +31,8 @@ function qrg() {
       --delimiter : \
       --border=rounded \
       --header 'C-y - copy name, C-r - yay -Rns' \
-      --multi --bind 'ctrl-r:execute-silent(yay -Rns --noconfirm {1} +{2})' \
-      --multi --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)'
+      --multi --bind 'ctrl-r:execute-silent(yay -Rns --noconfirm {+})' \
+      --multi --bind 'ctrl-y:execute-silent(echo -n {+} | wl-copy)'
 }
 
 # Golang
