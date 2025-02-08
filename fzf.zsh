@@ -17,7 +17,7 @@ export FZF_ALT_C_OPTS="
   --tmux 90%
   --multi --bind 'ctrl-d:become(rm -rf {+})'
   --multi --bind 'ctrl-o:execute(nvim {+})'
-  --preview 'eza --icons=auto --tree {}'"
+  --preview 'tammy {}'"
 
 export FZF_COMPLETION_OPTS='--border --info=rounded'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'

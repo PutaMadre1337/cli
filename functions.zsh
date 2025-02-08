@@ -23,12 +23,12 @@ function rf() {
       --multi --bind 'ctrl-o:execute(nvim {1} +{2})'
 }
 
-function qrg() {
-  pacman -Q |
+function packages() {
+  pacman -Qq |
   fzf --ansi \
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
+      --preview "echo 'Installation date:' && expac --timefmt='%F %T' '%l %n' {+} && echo '-------------------------------------' && echo 'Version:' && pacman -Q {+}"\
       --tmux 70% \
-      --delimiter : \
       --border=rounded \
       --header 'C-y - copy name, C-r - yay -Rns' \
       --multi --bind 'ctrl-r:execute-silent(yay -Rns --noconfirm {+})' \
