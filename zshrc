@@ -3,6 +3,8 @@ fastfetch
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
+####################################################################################
+
 # if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
 #   tmux attach || exec tmux new-session && exit;
 # fi
@@ -24,14 +26,15 @@ alias tm='tammy'
 ZSH=/usr/share/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/functions.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/system-scripts.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
   bindkey '^N' history-substring-search-down
 
 source ~/.zsh/fzf.zsh
-source <(fzf --zsh)
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source <(fzf --zsh)
 source ~/.zsh/fzf-tab/fzf-tab.zsh
 
 ####################################################################################
