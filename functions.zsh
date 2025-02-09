@@ -29,7 +29,7 @@ function note() {
         --preview 'mdcat {1}' \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
         --multi --bind 'ctrl-o:execute(nvim {+})' \
-        --bind 'ctrl-n:execute(nvim ~/Documents/"${*:-}".md)' \
+        --bind 'ctrl-e:execute(nvim ~/Documents/"${*:-}".md)' \
 }
 
 function in() {
@@ -105,4 +105,21 @@ function gbo {
 # cd autocmd
 function chpwd {
   eza -D -1 --show-symlinks --icons=auto
+}
+
+# Other
+function benchmark() {
+    local cmd="$@"
+    local start_time=$(date +%s.%N)
+    local output=$($cmd 2>&1)
+    local exit_code=$?
+    local end_time=$(date +%s.%N)
+    local duration=$(echo "scale=3; $end_time - $start_time" | bc)
+    echo "Command: $cmd"
+    echo "Duration: $duration seconds"
+    if [ $exit_code -ne 0 ]; then
+        echo "Exit code: $exit_code"
+        echo "Output:"
+        echo "$output"
+    fi
 }
