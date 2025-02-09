@@ -20,20 +20,46 @@ function rf() {
       --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
       --border=rounded \
       --header 'C-o - open file in nvim' \
-      --multi --bind 'ctrl-o:execute(nvim {1} +{2})'
+      --multi --bind 'ctrl-o:execute(nvim {+})'
 }
 
-function packages() {
-  pacman -Qq |
-  fzf --ansi \
-      --color "hl:-1:underline,hl+:-1:underline:reverse" \
-      --preview "echo 'Installation date:' && expac --timefmt='%F %T' '%l %n' {+} && echo '-------------------------------------' && echo 'Version:' && pacman -Q {+}"\
-      --tmux 70% \
-      --border=rounded \
-      --header 'C-y - copy name, C-r - yay -Rns' \
-      --multi --bind 'ctrl-r:execute-silent(yay -Rns --noconfirm {+})' \
-      --multi --bind 'ctrl-y:execute-silent(echo -n {+} | wl-copy)'
+function note() {
+  fd -t file . ~/Documents/ |
+    fzf --ansi \
+        --preview 'mdcat {1}' \
+        --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
+        --multi --bind 'ctrl-o:execute(nvim {+})' \
+        --bind 'ctrl-n:execute(nvim ~/Documents/"${*:-}".md)' \
 }
+
+function in() {
+    yay -Slq | fzf -q "$1" -m --preview 'yay -Si {1}'| xargs -ro yay -S --noconfirm
+}
+
+function re() {
+    yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' | xargs -ro yay -Rns
+}
+
+fzf-man-widget() {
+  manpage="echo {} | sed 's/\([[:alnum:][:punct:]]*\) (\([[:alnum:]]*\)).*/\2 \1/'"
+  batman="${manpage} | xargs -r man | col -bx | bat --language=man --plain --color always --theme=\"Monokai Extended\""
+   man -k . | sort \
+   | awk -v cyan=$(tput setaf 6) -v blue=$(tput setaf 4) -v res=$(tput sgr0) -v bld=$(tput bold) '{ $1=cyan bld $1; $2=res blue $2; } 1' \
+   | fzf  \
+      -q "$1" \
+      --ansi \
+      --tiebreak=begin \
+      --prompt=' Man > '  \
+      --preview-window '50%,rounded,<50(up,85%,border-bottom)' \
+      --preview "${batman}" \
+      --bind "enter:execute(${manpage} | xargs -r man)" \
+      --bind "alt-c:+change-preview(cht.sh {1})+change-prompt(ﯽ Cheat > )" \
+      --bind "alt-m:+change-preview(${batman})+change-prompt( Man > )" \
+      --bind "alt-t:+change-preview(tldr {1})+change-prompt(ﳁ TLDR > )"
+  zle reset-prompt
+}
+bindkey '^g' fzf-man-widget
+zle -N fzf-man-widget
 
 # Golang
 function gmi {
