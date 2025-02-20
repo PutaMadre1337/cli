@@ -104,22 +104,22 @@ function gbo {
 
 # cd autocmd
 function chpwd {
-  eza -D -1 --show-symlinks --icons=auto
+  eza -D -1 --show-symlinks --icons=auto -l
 }
 
 # Other
 function benchmark() {
     local cmd="$@"
-    local start_time=$(date +%s.%N)
-    local output=$($cmd 2>&1)
+    local start_time=$(($(date +%s%N)/1000000))
+    eval "$cmd"
     local exit_code=$?
-    local end_time=$(date +%s.%N)
-    local duration=$(echo "scale=3; $end_time - $start_time" | bc)
+    local end_time=$(($(date +%s%N)/1000000))
+    local duration=$(( end_time - start_time ))
+    local duration_ms=$(echo "scale=3; $duration / 1000" | bc)
     echo "Command: $cmd"
-    echo "Duration: $duration seconds"
+    echo "Duration: $duration_ms seconds"
     if [ $exit_code -ne 0 ]; then
         echo "Exit code: $exit_code"
-        echo "Output:"
-        echo "$output"
     fi
 }
+

@@ -1,7 +1,11 @@
 fastfetch
 
+autoload -Uz compinit
+compinit
+
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+eval "$(nim --generate-completions zsh)"
 
 ####################################################################################
 
@@ -13,7 +17,7 @@ eval "$(starship init zsh)"
 
 export GTK_USE_PORTAL=1
 export EDITOR="nvim"
-export PATH="$PATH:/home/username/.local/share/go/bin"
+export PATH="$PATH:/home/username/.local/share/go/bin:/home/username/.local/share/bin"
 
 # tammy
 export TREE_ENUMERATOR="rounded"
@@ -39,7 +43,16 @@ source ~/.zsh/fzf-tab/fzf-tab.zsh
 
 ####################################################################################
 
+# export QT_STYLE_OVERRIDE=DarkMaroon
+export QT_STYLE_OVERRIDE=kvantum-dark
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+####################################################################################
+
 setopt correct
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X" edit-command-line
 
 ####################################################################################
 
@@ -76,6 +89,10 @@ alias gmt='go mod tidy'
 alias grm='go run $(find . -iname main.go)'
 alias gb='go build $(find . -iname main.go)'
 
+# Rust
+alias cr='cargo run -q'
+alias cn='cargo new --vcs git'
+
 # directory navigation shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -91,6 +108,9 @@ alias ts='tmux attach-session -t'
 alias tkb='tmux lsk -N|fzf'
 
 # other
+alias hf='hyperfine'
+alias wstop='sudo waydroid session stop && sudo waydroid container stop'
+alias dockerrmall="docker rm -f $(docker ps -a | awk '{ print $1 }') && docker system prune -a -f"
 alias lr='lazydocker'
 alias te='trans en:ru -e bing'
 alias tr='trans ru:en -e bing'
