@@ -9,9 +9,9 @@ eval "$(nim --generate-completions zsh)"
 
 ####################################################################################
 
-# if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-#   tmux attach || exec tmux new-session && exit;
-# fi
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+  tmux attach || exec tmux new-session && exit;
+fi
 
 ####################################################################################
 
@@ -102,10 +102,6 @@ alias .5='cd ../../../../..'
 alias mkd='mkdir -p'
 alias srm='sudo rm -rf'
 alias rm='rm -rf'
-
-# tmux
-alias ts='tmux attach-session -t'
-alias tkb='tmux lsk -N|fzf'
 
 # other
 alias hf='hyperfine'

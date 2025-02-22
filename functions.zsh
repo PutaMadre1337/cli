@@ -26,6 +26,7 @@ function rf() {
 function note() {
   fd -t file . ~/Documents/ |
     fzf --ansi \
+        --tmux 80% \
         --preview 'mdcat {1}' \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
         --multi --bind 'ctrl-o:execute(nvim {+})' \
@@ -33,11 +34,11 @@ function note() {
 }
 
 function in() {
-    yay -Slq | fzf -q "$1" -m --preview 'yay -Si {1}'| xargs -ro yay -S --noconfirm
+    yay -Slq | fzf -q "$1" -m --preview 'yay -Si {1}' --tmux 80% | xargs -ro yay -S --noconfirm
 }
 
 function re() {
-    yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' | xargs -ro yay -Rns
+    yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' --tmux 80% | xargs -ro yay -Rns
 }
 
 fzf-man-widget() {
@@ -48,6 +49,7 @@ fzf-man-widget() {
    | fzf  \
       -q "$1" \
       --ansi \
+      --tmux 80% \
       --tiebreak=begin \
       --prompt=' Man > '  \
       --preview-window '50%,rounded,<50(up,85%,border-bottom)' \
