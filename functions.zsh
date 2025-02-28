@@ -50,6 +50,7 @@ function re() {
         --header '╱ CTRL-A (все пакеты) ╱ CTRL-O (пакеты-сироты) ╱' \
         --prompt '1. all packages> ' \
         --preview 'yay -Qi {1}' \
+        --tmux 80% \
         --multi
 }
 
