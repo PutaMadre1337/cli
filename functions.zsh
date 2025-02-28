@@ -38,7 +38,19 @@ function in() {
 }
 
 function re() {
-    yay -Qq | fzf -q "$1" -m --preview 'yay -Qi {1}' --tmux 80% | xargs -ro yay -Rns
+    local ALL_PKGS_CMD="yay -Qq"
+    local ORPHAN_PKGS_CMD="yay -Qdtq"
+    local INITIAL_QUERY="${1:-}"
+
+    fzf --ansi --query "$INITIAL_QUERY" \
+        --bind "start:reload($ALL_PKGS_CMD)" \
+        --bind "ctrl-o:unbind(ctrl-o)+change-prompt(2. orphans> )+reload($ORPHAN_PKGS_CMD)+rebind(ctrl-a)" \
+        --bind "ctrl-a:unbind(ctrl-a)+change-prompt(1. all packages> )+reload($ALL_PKGS_CMD)+rebind(ctrl-o)" \
+        --bind "enter:execute-silent(yay -Rns {1})+reload($ALL_PKGS_CMD)" \
+        --header '╱ CTRL-A (все пакеты) ╱ CTRL-O (пакеты-сироты) ╱' \
+        --prompt '1. all packages> ' \
+        --preview 'yay -Qi {1}' \
+        --multi
 }
 
 fzf-man-widget() {
@@ -123,5 +135,18 @@ function benchmark() {
     if [ $exit_code -ne 0 ]; then
         echo "Exit code: $exit_code"
     fi
+}
+
+function deleteallvms() {
+  vagrant box prune
+
+  vms=$(VBoxManage list vms | awk '{print $1}' | tr -d '"')
+  for vm in $vms; do
+    if VBoxManage showvminfo "$vm" > /dev/null 2>&1; then
+      VBoxManage unregistervm "$vm" --delete
+    else
+      echo "VM $vm does not exist or is already unregistered."
+    fi
+  done
 }
 

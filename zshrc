@@ -15,9 +15,9 @@ fi
 
 ####################################################################################
 
-export GTK_USE_PORTAL=1
 export EDITOR="nvim"
 export PATH="$PATH:/home/username/.local/share/go/bin:/home/username/.local/share/bin"
+export PATH="$PATH:/home/username/.gem/ruby/$(ruby -e 'print RUBY_VERSION')/bin"
 
 # tammy
 export TREE_ENUMERATOR="rounded"
@@ -108,8 +108,8 @@ alias hf='hyperfine'
 alias wstop='sudo waydroid session stop && sudo waydroid container stop'
 alias dockerrmall="docker rm -f $(docker ps -a | awk '{ print $1 }') && docker system prune -a -f"
 alias lr='lazydocker'
-alias te='trans en:ru -e bing'
-alias tr='trans ru:en -e bing'
+alias ten='trans en:ru -e bing'
+alias tru='trans ru:en -e bing'
 alias ff='fastfetch'
 alias t='touch'
 alias si='sudo -i'
