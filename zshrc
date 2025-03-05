@@ -1,11 +1,7 @@
 fastfetch
 
-autoload -Uz compinit
-compinit
-
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
-eval "$(nim --generate-completions zsh)"
 
 ####################################################################################
 
@@ -19,18 +15,16 @@ export EDITOR="nvim"
 export PATH="$PATH:/home/username/.local/share/go/bin:/home/username/.local/share/bin"
 export PATH="$PATH:/home/username/.gem/ruby/$(ruby -e 'print RUBY_VERSION')/bin"
 
-# tammy
-export TREE_ENUMERATOR="rounded"
-export RELATIVE_PATH="true"
-export DEFAULT_FORM="tree"
-alias tm='tammy'
-
 ####################################################################################
+
+source ~/.zsh/functions/fzf.zsh
+source ~/.zsh/functions/autocmd.zsh
+source ~/.zsh/functions/other.zsh
+source ~/.zsh/functions/system.zsh
 
 ZSH=/usr/share/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/functions.zsh
-source ~/.zsh/system-scripts.zsh
+source ~/.zsh/private.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
   bindkey '^N' history-substring-search-down
@@ -49,16 +43,21 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 ####################################################################################
 
+autoload -Uz compinit
+  compinit
 setopt correct
 autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^X" edit-command-line
 
 ####################################################################################
 
-bindkey -r '^L'
+zle -N edit-command-line
+bindkey "^X" edit-command-line
 
+bindkey -r '^L'
 bindkey '^L' delete-char
+
+bindkey '^g' fzf-man-widget
+zle -N fzf-man-widget
 
 ####################################################################################
 
@@ -123,5 +122,3 @@ alias s='sudo'
 alias siy='sudo -i yazi $(pwd)'
 alias x='chmod +x'
 alias sx='sudo chmod +x'
-# alias countlines='pwd && echo "Общее количество строк: $(cat $(fd -t file) | wc -l)"'
-# alias countlines='start_time=$(date +%s.%N); pwd && echo "Общее количество строк: $(cat $(fd -t file) | wc -l)"; end_time=$(date +%s.%N); elapsed_time=$(echo "scale=3; ($end_time - $start_time) * 1000" | bc); echo "Время выполнения: $elapsed_time миллисекунд"'
