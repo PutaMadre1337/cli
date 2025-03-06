@@ -13,7 +13,6 @@ fi
 
 export EDITOR="nvim"
 export PATH="$PATH:/home/username/.local/share/go/bin:/home/username/.local/share/bin"
-export PATH="$PATH:/home/username/.gem/ruby/$(ruby -e 'print RUBY_VERSION')/bin"
 
 ####################################################################################
 
@@ -70,7 +69,7 @@ alias lt='eza --icons=auto --tree'
 
 # packages
 alias dw='yay -S --noconfirm'
-alias up='yay -Syu --noconfirm && yay -Yc --noconfirm'
+# alias up='yay -Syu --noconfirm && yay -Yc --noconfirm'
 alias rns='yay -Rns --noconfirm'
 alias yc='yay -Yc --noconfirm'
 alias r='yay -R --noconfirm'
@@ -111,7 +110,6 @@ alias rm='rm -rf'
 # other
 alias hf='hyperfine'
 alias wstop='sudo waydroid session stop && sudo waydroid container stop'
-alias dockerrmall="docker rm -f $(docker ps -a | awk '{ print $1 }') && docker system prune -a -f"
 alias lr='lazydocker'
 alias ten='trans en:ru -e bing'
 alias tru='trans ru:en -e bing'
