@@ -24,7 +24,8 @@ export FZF_ALT_C_OPTS="
 export FZF_COMPLETION_OPTS='--border --info=rounded'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
 export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
-export FZF_DEFAULT_OPTS='--bind ctrl-k:preview-up,ctrl-j:preview-down --prompt="󱡁 " --marker="󰣉 "'
+export FZF_DEFAULT_OPTS='--bind ctrl-b:preview-up,ctrl-f:preview-down,ctrl-d:half-page-down,ctrl-u:half-page-up
+--prompt="❯ " --marker="󰣉 "'
 
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=auto --tree $realpath'
 zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'bat -n --color=always $realpath'

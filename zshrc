@@ -20,10 +20,13 @@ source ~/.zsh/functions/fzf.zsh
 source ~/.zsh/functions/autocmd.zsh
 source ~/.zsh/functions/other.zsh
 source ~/.zsh/functions/system.zsh
+source ~/.zsh/functions/golang.zsh
+source ~/.zsh/functions/dots.zsh
+
+source ~/.zsh/private.zsh
 
 ZSH=/usr/share/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/private.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
   bindkey '^N' history-substring-search-down
@@ -69,7 +72,6 @@ alias lt='eza --icons=auto --tree'
 
 # packages
 alias dw='yay -S --noconfirm'
-# alias up='yay -Syu --noconfirm && yay -Yc --noconfirm'
 alias rns='yay -Rns --noconfirm'
 alias yc='yay -Yc --noconfirm'
 alias r='yay -R --noconfirm'
@@ -80,8 +82,8 @@ alias ps='yay -Ps'
 # nvim
 alias n='nvim'
 alias se='sudoedit'
-alias nh='nvim ~/.config/hypr/'
-alias nfc='nvim ~/.zshrc'
+alias nh='fd ~/.config/hypr | fzf'
+alias nz='nvim ~/.zshrc'
 alias nt='nvim ~/.tmux.conf && tmux source-file ~/.tmux.conf'
 
 # git

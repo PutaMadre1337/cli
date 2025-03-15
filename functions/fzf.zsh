@@ -19,7 +19,6 @@ function note() {
         --preview 'mdcat {1}' \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
         --multi --bind 'ctrl-o:execute(nvim {+})' \
-        --bind 'ctrl-e:execute(nvim ~/Documents/"${*:-}".md)' \
 }
 
 function in() {
