@@ -24,6 +24,7 @@ source ~/.zsh/functions/golang.zsh
 source ~/.zsh/functions/dots.zsh
 
 source ~/.zsh/private.zsh
+source ~/.zsh/fzf.zsh
 
 ZSH=/usr/share/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -31,7 +32,7 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
   bindkey '^N' history-substring-search-down
 
-source ~/.zsh/fzf.zsh
+source ~/.zsh/autovenv/autovenv.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
@@ -89,6 +90,11 @@ alias nt='nvim ~/.tmux.conf && tmux source-file ~/.tmux.conf'
 # git
 alias lg='lazygit'
 alias of='onefetch'
+
+# python
+alias mkv='python3 -m venv .venv'
+alias rmv='rm -rf .venv'
+alias freeze='pip freeze > requirements.txt'
 
 # go
 alias gmt='go mod tidy'

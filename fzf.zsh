@@ -1,6 +1,6 @@
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target
-  --preview 'if [ -d {} ]; then tammy {}; else bat -n --color=always {}; fi'
+  --preview 'if [ -d {} ]; then eza --tree {}; else bat -n --color=always {}; fi'
   --header 'C-o to open nvim, C-s to use sudoedit, C-r to remove, C-x to chmod +x'
   --multi --bind 'ctrl-o:execute(nvim {+})'
   --multi --bind 'ctrl-s:execute(sudoedit {+})'
@@ -9,13 +9,11 @@ export FZF_CTRL_T_OPTS="
 
 export FZF_CTRL_R_OPTS="
   --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)'
-  --tmux 90%
   --header 'CTRL-Y to copy command into clipboard'
   --color header:italic"
 
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
-  --tmux 90%
   --header 'C-o to open nvim, C-r to remove'
   --multi --bind 'ctrl-r:become(rm -rf {+})'
   --multi --bind 'ctrl-o:execute(nvim {+})'
