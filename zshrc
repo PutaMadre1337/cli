@@ -1,7 +1,7 @@
 fastfetch
 
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(starship init zsh)"
+autoload -Uz compinit
+  compinit
 
 ####################################################################################
 
@@ -40,14 +40,6 @@ source ~/.zsh/fzf-tab/fzf-tab.zsh
 
 ####################################################################################
 
-# export QT_STYLE_OVERRIDE=DarkMaroon
-export QT_STYLE_OVERRIDE=kvantum-dark
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-####################################################################################
-
-autoload -Uz compinit
-  compinit
 setopt correct
 autoload -z edit-command-line
 
@@ -61,6 +53,12 @@ bindkey '^L' delete-char
 
 bindkey '^g' fzf-man-widget
 zle -N fzf-man-widget
+
+####################################################################################
+
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"
+eval "$(nim --generate-completions zsh)"
 
 ####################################################################################
 
