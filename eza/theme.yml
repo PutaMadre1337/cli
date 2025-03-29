@@ -18,3 +18,4 @@ filenames:
   archive: {icon: {glyph:  }}
   CLI: {icon: {glyph:  }}
   Web: {icon: {glyph: 󰖟 }}
+  DevOps: {icon: {glyph:  }}

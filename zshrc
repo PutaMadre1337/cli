@@ -24,6 +24,7 @@ source ~/.zsh/functions/golang.zsh
 source ~/.zsh/functions/dots.zsh
 
 source ~/.zsh/private.zsh
+
 source ~/.zsh/fzf.zsh
 
 ZSH=/usr/share/oh-my-zsh
