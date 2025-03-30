@@ -60,6 +60,8 @@ zle -N fzf-man-widget
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 eval "$(nim --generate-completions zsh)"
+eval "$(kubectl completion zsh)"
+eval "$(minikube completion zsh)"
 
 ####################################################################################
 
