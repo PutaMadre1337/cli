@@ -6,9 +6,9 @@
 //  by Bina
 {
   "logo": {
-    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/colored/\" -name \"*.png\" | shuf -n 1)",
-    "width": 40,
-    "type": "kitty-icat",
+    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/bw/\" -name \"*.png\" | shuf -n 1)",
+    "width": 45,
+    // "type": "kitty-icat",
     "padding": {
       "right": 9,
       "top": 1
@@ -120,7 +120,7 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[96m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[91m  \u001b[92m  \u001b[93  \u001b[94  \u001b[95  \u001b[96  \u001b[97"
+      "format": "\u001b[96m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[91m  \u001b[92m "
     },
   ]
 }

@@ -5,9 +5,9 @@ autoload -Uz compinit
 
 ####################################################################################
 
-if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-  tmux attach || exec tmux new-session && exit;
-fi
+# if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+#   tmux attach || exec tmux new-session && exit;
+# fi
 
 ####################################################################################
 
@@ -79,7 +79,7 @@ alias yc='yay -Yc --noconfirm'
 alias r='yay -R --noconfirm'
 alias rd='yay -Rd --nodeps'
 alias scc='yay -Scc'
-alias ps='yay -Ps'
+alias yps='yay -Ps'
 
 # nvim
 alias n='nvim'
