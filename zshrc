@@ -1,7 +1,15 @@
-fastfetch
+# zmodload zsh/zprof
 
 autoload -Uz compinit
-  compinit
+autoload -Uz compdef
+
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+    compinit;
+else
+    compinit -C;
+fi
+
+fastfetch
 
 ####################################################################################
 
@@ -16,6 +24,11 @@ export PATH="$PATH:/home/username/.local/share/go/bin:/home/username/.local/shar
 
 ####################################################################################
 
+HISTFILE=~/.zsh_history
+HISTSIZE=999999999999
+SAVEHIST=999999999999
+setopt SHARE_HISTORY
+
 source ~/.zsh/functions/fzf.zsh
 source ~/.zsh/functions/autocmd.zsh
 source ~/.zsh/functions/other.zsh
@@ -24,8 +37,6 @@ source ~/.zsh/functions/golang.zsh
 source ~/.zsh/functions/dots.zsh
 
 source ~/.zsh/private.zsh
-
-source ~/.zsh/fzf.zsh
 
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
@@ -56,6 +67,7 @@ zle -N fzf-man-widget
 
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+
 eval "$(nim --generate-completions zsh)"
 eval "$(kubectl completion zsh)"
 eval "$(minikube completion zsh)"
@@ -99,7 +111,7 @@ alias gmt='go mod tidy'
 alias grm='go run $(find . -iname main.go)'
 alias gb='go build $(find . -iname main.go)'
 
-# Rust
+# rust
 alias cr='cargo run -q'
 alias cn='cargo new --vcs git'
 
@@ -110,8 +122,8 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias mkd='mkdir -p'
-alias srm='sudo rm -rf'
-alias rm='rm -rf'
+alias srmrf='sudo rm -rf'
+alias rmrf='rm -rf'
 
 # other
 alias hf='hyperfine'
@@ -126,3 +138,5 @@ alias s='sudo'
 alias siy='sudo -i yazi $(pwd)'
 alias x='chmod +x'
 alias sx='sudo chmod +x'
+
+# zprof
