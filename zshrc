@@ -27,13 +27,10 @@ source ~/.zsh/private.zsh
 
 source ~/.zsh/fzf.zsh
 
-ZSH=/usr/share/oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
   bindkey '^N' history-substring-search-down
 
-source ~/.zsh/autovenv/autovenv.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
