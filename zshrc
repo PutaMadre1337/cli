@@ -63,6 +63,16 @@ bindkey '^L' delete-char
 bindkey '^g' fzf-man-widget
 zle -N fzf-man-widget
 
+bindkey -v
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^U' backward-kill-line
+bindkey '^F' forward-char
+bindkey '^B' backward-char
+bindkey '^K' kill-line
+bindkey '^Y' yank
+bindkey '^T' transpose-chars
+
 ####################################################################################
 
 eval "$(zoxide init --cmd cd zsh)"
