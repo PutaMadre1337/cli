@@ -1,5 +1,8 @@
-# Fastfetch
+# Old fastfetch
 ![PNG](assets/fastfetch.png)
+
+# Current fastfetch
+![PNG](assets/fastfetch-new.png)
 
 # Zsh prompt
 ![PNG](assets/zsh.png)
