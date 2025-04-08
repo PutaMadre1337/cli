@@ -17,7 +17,7 @@ export FZF_ALT_C_OPTS="
   --header 'C-o to open nvim, C-r to remove'
   --multi --bind 'ctrl-r:become(rm -rf {+})'
   --multi --bind 'ctrl-o:execute(nvim {+})'
-  --preview 'tammy {}'"
+  --preview 'nim -f name-line {}'"
 
 export FZF_COMPLETION_OPTS='--border --info=rounded'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'

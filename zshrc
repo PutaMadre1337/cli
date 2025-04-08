@@ -37,6 +37,7 @@ source ~/.zsh/functions/golang.zsh
 source ~/.zsh/functions/dots.zsh
 
 source ~/.zsh/private.zsh
+source ~/.zsh/fzf.zsh
 
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
   bindkey '^P' history-substring-search-up
@@ -44,8 +45,8 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source <(fzf --zsh)
 source ~/.zsh/fzf-tab/fzf-tab.zsh
+source <(fzf --zsh)
 
 ####################################################################################
 
@@ -71,16 +72,30 @@ bindkey '^F' forward-char
 bindkey '^B' backward-char
 bindkey '^K' kill-line
 bindkey '^Y' yank
-bindkey '^T' transpose-chars
 
 ####################################################################################
 
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(starship init zsh)"
+CACHE_DIR="$HOME/.cache/zsh/completions"
+mkdir -p "$CACHE_DIR"
 
-eval "$(nim --generate-completions zsh)"
-eval "$(kubectl completion zsh)"
-eval "$(minikube completion zsh)"
+commands_and_caches=(
+  "nim --generate-completions zsh:$CACHE_DIR/nim_completions.zsh"
+  "kubectl completion zsh:$CACHE_DIR/kubectl_completions.zsh"
+  "minikube completion zsh:$CACHE_DIR/minikube_completions.zsh"
+  "zoxide init --cmd cd zsh:$CACHE_DIR/zoxide_completions.zsh"
+  "starship init zsh:$CACHE_DIR/starship_completions.zsh"
+)
+
+for entry in "${commands_and_caches[@]}"; do
+  command="${entry%%:*}"
+  cache_file="${entry##*:}"
+  [ ! -f "$cache_file" ] && eval "$command" > "$cache_file"
+done
+
+for entry in "${commands_and_caches[@]}"; do
+  cache_file="${entry##*:}"
+  source "$cache_file"
+done
 
 ####################################################################################
 
