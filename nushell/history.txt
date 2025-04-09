@@ -1,0 +1,181 @@
+l
+ls
+eza
+l
+ls -l
+nim 
+cd ~/.config/nushell
+l
+ls
+nvim config.nu
+ls
+ls --mime-type 
+cd ~/.config/nushell
+ls
+c
+cd
+ls
+cd -
+help ls
+ls --help 
+help cp
+cp config.nu config.nu2
+rm config.nu2
+n config.nu
+nvim config.nu
+ff
+nvim config.nu
+znu
+nvim config.nu
+config nu
+config --help 
+eonfig env
+config env
+config --help
+config nu
+echo $EDITOR
+config nu
+echo $EDITOR
+echo 12
+$env.EDITOR
+sudoedit /etc/fstab
+kubectl help
+ls
+kubectl completion
+kubectl completion -h
+kubectl completion nushell
+kubectl completion nu
+cd
+chsh -s nushell
+chsh -h
+chsh -l
+chsh -s /usr/bin/nu
+chsh -h
+chsh -l 
+chsh -s /usr/bin/nu
+reboot
+cd nushell
+cd ~/.config/nushell
+zoxide init --help
+ls
+ls --long 
+ls --threads 
+ls --threads config.nu
+ls --all 
+nvim config.nu
+ls
+cd
+ls
+y
+yazi
+cd nushell
+cd ~/.config/nushell
+nvim config.nu
+cd yazi
+z yazi
+zoxide --help
+n config.nu
+nvim config.nu
+zshz
+chsh -s /usr/bin/nu
+l
+lu
+ls
+chsh -s /usr/bin/zsh
+cd
+cd nushell
+cd ~/.config/nushell
+nvim config.nu
+nvim  
+nvim  config.nu
+z 
+zi
+nvim  config.nu
+z
+zi
+nivm
+cd yazi
+cdi
+cdh
+cdi
+cargo --help
+cargo --list
+cargo remove zoxide
+z
+zi
+ls
+cd ~/.config/nvim
+yazi
+zoxie
+zoxide
+zoxide init nushell
+zoxide init nushell | save -f ~/.config/nushell/zoxide.nu
+cd
+cd yazi
+ls -ls
+ls -la
+ls -ls
+ls -lll
+ls -lsllslsli
+ls -lsllslsl
+ls --help
+help ls
+ls * nu
+ls *.nu
+mkdir --help
+help mkdir
+help find
+find config
+find config.nu
+find . config.nu
+help find
+find config.nu
+cd tammy
+cd ~/Development/Coding/CLI/tammy/
+l
+ls
+find main.go
+"main.go" | find
+find 
+fd
+fd main
+fd main.go
+fd | rg main
+fd | rg main.go
+find
+CARGO_LOG=trace fd
+find --help
+find --regex "main"
+ls --tree
+ls
+ls --full-paths 
+ls --du 
+where
+help where
+where main.go
+"main.go" | where
+ls
+ls **/*
+go run (ls **/* | rg main.go)
+go run (ls **/* | rg main.go | awk '{print $3}')
+ls **/* | rg main.go | awk '{print $3}'
+ls **/* | rg main.go | awk '{print $4}'
+go run (ls **/* | rg main.go | awk '{print $4}')
+ff
+l
+ls
+y
+yazi
+ls **/
+ls **/*
+ls
+y
+cd nu
+n config.nu
+rm ~/.local/state/nvim/swap/
+rm -rf ~/.local/state/nvim/swap/
+n config.nu
+y
+cd
+y
+cd zsh
