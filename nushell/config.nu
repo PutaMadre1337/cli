@@ -13,7 +13,7 @@ $env.PROMPT_INDICATOR_VI_INSERT = ": "
 $env.PROMPT_INDICATOR_VI_NORMAL = "〉"
 $env.PROMPT_MULTILINE_INDICATOR = "::: "
 
-source ~/.config/nushell/zoxide.nu
+source ~/.config/nushell/app/zoxide.nu
 let zoxide_completer = {|spans|
     $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
 }
@@ -31,7 +31,7 @@ def --env y [...args] {
 }
 
 # packages
-alias dw                                                                                                          =                                                                                                          yay -S --noconfirm
+alias dw =  yay -S --noconfirm
 alias rns = yay -Rns --noconfirm
 alias yc = yay -Yc --noconfirm
 alias r = yay -R --noconfirm

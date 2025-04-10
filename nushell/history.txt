@@ -179,3 +179,15 @@ y
 cd
 y
 cd zsh
+rm -rf ~/.config/nushell ; ln -s nushell/ ~/.config/nushell
+ls -l ~/.config | where type == symlink
+rm -rf ~/.config/nushell ; ln -s ~/.cli-settings/nushell/ ~/.config/nushell
+ls -l ~/.config | where type == symlink
+ls
+ls zsh
+lg
+ls -l ~/.config | where type == symlink
+y
+n config.nu
+l
+config nu
