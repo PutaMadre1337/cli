@@ -1,0 +1,32 @@
+#!/usr/bin/env ansible-playbook
+- hosts: localhost
+  tasks:
+    - name: zsh
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/zsh/zshrc"
+        dest: "{{ ansible_user_dir }}/.zshrc"
+        state: link
+
+    - name: nushell
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/nushell"
+        dest: "{{ ansible_user_dir }}/.config/nushell"
+        state: link
+
+    - name: kitty
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/kitty"
+        dest: "{{ ansible_user_dir }}/.config/kitty"
+        state: link
+
+    - name: eza
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/eza"
+        dest: "{{ ansible_user_dir }}/.config/eza"
+        state: link
+
+    - name: fastfetch
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/fastfetch"
+        dest: "{{ ansible_user_dir }}/.config/fastfetch"
+        state: link

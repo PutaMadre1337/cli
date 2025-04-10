@@ -29,21 +29,21 @@ HISTSIZE=999999999999
 SAVEHIST=999999999999
 setopt SHARE_HISTORY
 
-source ~/.zsh/functions/fzf.zsh
-source ~/.zsh/functions/autocmd.zsh
-source ~/.zsh/functions/other.zsh
-source ~/.zsh/functions/system.zsh
-source ~/.zsh/functions/golang.zsh
-source ~/.zsh/functions/dots.zsh
+source ~/.cli/zsh/functions/fzf.zsh
+source ~/.cli/zsh/functions/autocmd.zsh
+source ~/.cli/zsh/functions/other.zsh
+source ~/.cli/zsh/functions/system.zsh
+source ~/.cli/zsh/functions/golang.zsh
+source ~/.cli/zsh/functions/dots.zsh
 
-source ~/.zsh/private.zsh
-source ~/.zsh/fzf.zsh
+source ~/.cli/zsh/private.zsh
+source ~/.cli/zsh/fzf.zsh
 
-source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.cli/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/fzf-tab/fzf-tab.zsh
+source ~/.cli/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.cli/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.cli/zsh/fzf-tab/fzf-tab.zsh
 source <(fzf --zsh)
 
 ####################################################################################

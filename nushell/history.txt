@@ -191,3 +191,108 @@ y
 n config.nu
 l
 config nu
+ls
+ls **/*
+y
+cd yazi
+y
+rns yazi
+rofi
+pkill rofi
+cd
+btrfs property get 
+dw yazi
+s btrfs property get /
+y
+reboot
+l
+ls
+rofi 
+y
+cd notes
+n Work/MAC and IP adress.md
+n Work/MAC\ and\ IP\ adress.md
+n Work/"MAC and IP adress.md"
+y
+cd yazi
+l
+..
+mv yazi yazii
+y
+mv yazii yazi
+y
+cd yazi
+ya --help
+ya pack -u
+y
+ya pack --help
+ya --help
+ya pack -m
+nim --help
+y
+rm plugins/git.yazi/
+lg
+rm -rf plugins/git.yazi/
+y
+rg git
+n package.toml
+y
+n init.lua
+y
+rm theme.toml
+y
+lg
+y
+rmrf plugins/starship.yazi/
+y
+rmrf plugins/eza-preview.yazi/
+y
+n init.lua
+y
+n init.lua
+y
+ansible-playbook -i make-symlinks.yml
+ansible playbook make-symlinks.yml
+ansible playbook -i make-symlinks.yml
+dw ansible-playbook
+ansible-playbook -i make-symlinks.yml
+./make-symlinks.yml
+x make-symlinks.yml
+./make-symlinks.yml
+rm ~/.zsh_history
+y
+./make-symlinks.yml
+cd cli
+./make-symlinks.yml
+./make-symlinks.yml -vvv
+ls --all ~/ | where type == symlink
+ls --all ~/ 
+ls --all ~/  | rg tmux
+ls --all ~/  | rg zsh
+./make-symlinks.yml -vvv
+ls --all ~/  | rg zsh
+./make-symlinks.yml 
+cd ../ && mv cli-settings cli
+cd ../ and mv cli-settings cli
+cd .. and mv cli-settings cli
+.. and mv cli-settings cli
+cd ..
+./make-symlinks.yml
+y
+..
+ff
+y
+./make-symlinks.yml
+ff
+y
+git clone  https://github.com/HyDE-Project/HyDE
+n
+y
+ls
+y
+ls
+cd hypr
+y
+ls
+cd cli
+n make-symlinks.yml
