@@ -1,17 +1,6 @@
 fastfetch
 
-$env.config.show_banner = false
-
-$env.STARSHIP_SHELL = "nu"
-def create_left_prompt [] {
-    starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
-}
-$env.PROMPT_COMMAND = { || create_left_prompt }
-$env.PROMPT_COMMAND_RIGHT = ""
-$env.PROMPT_INDICATOR = ""
-$env.PROMPT_INDICATOR_VI_INSERT = ": "
-$env.PROMPT_INDICATOR_VI_NORMAL = "〉"
-$env.PROMPT_MULTILINE_INDICATOR = "::: "
+source ~/.cache/carapace/init.nu
 
 source ~/.config/nushell/app/zoxide.nu
 let zoxide_completer = {|spans|
@@ -19,6 +8,7 @@ let zoxide_completer = {|spans|
 }
 
 alias cd = __zoxide_z
+alias cdi = zi
 
 def --env y [...args] {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
@@ -82,3 +72,9 @@ alias s = sudo
 alias siy = sudo -i yazi (pwd)
 alias x = chmod +x
 alias sx = sudo chmod +x
+alias icat = kitty +icat
+alias c = clear
+
+source ~/.config/nushell/functions/system.nu
+source ~/.config/nushell/functions/docker.nu
+source ~/.config/nushell/menus.nu

@@ -1,3 +1,3 @@
 function chpwd {
-  eza -D -1 --show-symlinks --icons=auto
+  nu -c "ls | where type == dir"
 }

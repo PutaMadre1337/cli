@@ -296,3 +296,381 @@ y
 ls
 cd cli
 n make-symlinks.yml
+lg
+cd
+ls
+ls -l
+ls -la
+ls -al
+nh
+hypr
+cd hypr
+fzf
+y
+hyprctl switchxkblayout by-tech-gaming-keyboard next 
+cd
+cdi
+cdh
+cd nu
+zi
+config nu
+zh
+cdi
+ls | get name
+ls | get type
+ls | get name | get type
+ls | get name ; get type
+ls | get name ; ls | get  type
+ls | get name ; ls | get type
+ls | get name and ls | get type
+up
+n
+nvim
+config nu
+dirs
+dirs add
+config nu
+dirs
+dirs add ~/.config/nushell
+dirs
+dirs pre
+dirs prev
+dirs add ~/.config/nvim
+dirs prev
+dirs list
+dirs
+dirs nvim
+dirs --help
+help dirs
+dirs next
+config nu
+in
+y
+dw carapace
+iftop
+config env 
+config nu 
+cd notes
+cd -
+config nu
+cava
+diaah
+cd
+hf
+hf --help
+fish --help
+hf 'fish -c exit'
+nu --help
+hf 'nu -c exit'
+hf 'zsh -c exit'
+config nu
+ls
+hf 'nu'
+hf 'nu -c exit' && hf 'fish -c exit'
+hf 'nu -c exit' ; hf 'fish -c exit'
+hf 'nu -c exit' 'fish -c exit'
+hf 'nu -c exit' 'fish -c exit' 'zsh -c exit'
+hf -N 'nu -c exit' 'fish -c exit' 'zsh -c exit'
+hf 'nu -c exit' 'fish -c exit' 'zsh -c exit'
+u
+nun
+nu-check 
+nu-check asdf
+nu-check Development/
+du
+rm .VirtualBox/
+rm -rf .VirtualBox/
+ff
+f
+ff
+fff
+f
+ff
+f
+ff
+f
+ff
+f
+ff
+f
+ff
+f
+ff
+f
+config nu
+bench zsh -c exit
+bench 'zsh -c exit'
+config nu
+pacman -Qq
+pacman -Q
+pacman -Q | dc
+help table
+pacman -Q | split column -s " "
+pacman -Q | split column " "
+pacman -Q | split row " "
+pacman -Q 
+pacman -Q | split words " "
+pacman -Q | split words
+pacman -q
+pacman -Q
+pacman -Q | split column --help
+pacman -Q | split row " "
+pacman -Q
+pacman -Q | less
+u
+pacman -Q | split row " "
+pacman -Q | split row --regex '[A-z] [0-9]'
+pacman -Q | split column --regex '[A-z] [0-9]'
+split column --help
+nu
+ls
+l
+ls
+ls -d
+ls -d ~/
+cd
+y
+up
+config nu
+hypr
+nh
+n ~/.config/hypr/hyprland/rules.conf 
+y
+n main.go
+y
+kitty +icat nim.gif
+icat nim.gif
+config nu
+chsh -s /usr/bin/nu
+icat nim.gif
+cd yazi
+n yazi.toml 
+y
+up
+config nu
+n
+up
+xdotool
+historyy
+history
+^history
+run-external history
+config nu
+y
+cd config
+cd
+config nu
+n ~/.config/hypr/themes/theme.conf 
+n ~/.config/hypr/hyprland/rules.conf 
+y
+cd hypr
+y
+docker ps --format {{.Names}}
+docker ps --format '{{.Names}}'
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres<\n>
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker ps --format {{.Names}}
+def --help
+docker ps | lines | each { |it| echo $it }
+docker pruneall 
+docker ps
+docker pruneall
+docker ps -q
+docker pruneall
+docker ps
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+lazydocker
+docker container ls
+docker container ls -a -q
+docker pruneall
+config nu
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+lazydocker
+n
+docker container ls -a -q
+docker container ls -a -q | docker rm --
+docker rm (docker container ls -a -q)
+n
+docker pruneall
+lazydocker
+config nu
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker exec -it some-postgres bash
+docker exec -it some-postgres psql -U postgres
+docker pruneall
+y
+cd
+c
+cd
+run-external "ls"
+nz
+^ls
+^ls | complete
+scope aliases
+cd
+ls and echo \n\n\n\n\n\n\n\n\n\n\n\n
+ls ; echo \n\n\n\n\n\n\n\n\n\n\n\n
+ls ; ^printf \n\n\n\n\n\n\n\n\n\n\n\n
+ls
+nu --help
+plugin list
+config nu
+chsh -s /usr/bin/zsh
+ls -d
+config
+config use-colors
+ls
+all_history_nenu
+all_history_menu
+history
+cd (ls | where type == dir | each { |row| $row.name} | str join (char nl) | fzf | decode utf-8 | str trim)
+config nu
+cd (ls | where type == dir | each { |row| $row.name} | str join (char nl) | fzf | decode utf-8 | str trim)
+cd
+cd (ls | where type == dir | each { |row| $row.name} | str join (char nl) | fzf | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --prewiev ''<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview ''<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'nu -c ls'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'nu -c ls {}'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls {}'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'eza --tree {}'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'dust {}'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview '(ls {})'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls | where type == dir'<\n>          | decode utf-8 | str trim)
+chsh -s /usr/bin/nu
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls | where type == dir'<\n>          | decode utf-8 | str trim)
+n
+hypr
+n ~/.config/hypr/hyprland/other.conf 
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls | where type == dir'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls -d {}'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls {}'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls {}/*'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls {} **/*'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls {}'<\n>          | decode utf-8 | str trim)
+ls
+ls -d
+cd
+cd Development/
+cd
+cd Documents/
+cd
+cd -
+cd
+cd -
+pwd
+cd
+cd -
+ls | sort-by type name -i | grid -c
+print (ls)
+echo ls
+echo (ls)
+^echo (ls)
+cd
+cd Documents/
+cd
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls {}'<\n>          | decode utf-8 | str trim)
+ls --all
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls -a {}'<\n>          | decode utf-8 | str trim)
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls --all {}'<\n>          | decode utf-8 | str trim)
+ls -all
+ls --short-names 
+cd (ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls --short-names {}'<\n>          | decode utf-8 | str trim)
+ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)<\n>          | fzf --preview 'ls --short-names {}'<\n>          | decode utf-8 | str trim
+<\n>          | decode utf-8 | str trim
+ls<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl)
+ls ~/Documents/<\n>          | where type == dir<\n>          | each { |row| $row.name}<\n>          | str join (char nl) 
+history | reverse | each { echo [$it (char nl)] } | str collect | fzf --header '[HISTORY]' | cbs
+history<\n>          | each { |row| $row.name}<\n>          | fzf --preview 'ls --short-names {}'<\n>          | decode utf-8 | str trim)
+history<\n>          | each { |row| $row.name}<\n>          | fzf<\n>          | decode utf-8 | str trim)
+history<\n>          | each { |row| $row.name}<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | each { |row| command}<\n>          | fzf<\n>          | decode utf-8 | str trim
+history
+history<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | each {|row| $row.name}<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | each {|row| 'command'}<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | each {|row| $row.name}<\n>          | fzf<\n>          | decode utf-8 | str trim
+history
+history<\n>          | each {|row| $row.command}<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | get command<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | get command | flatten<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | get command | flatten<\n>
+history<\n>          | each {|row| $row.command}<\n>
+history | each {|row| $row.command}
+history<\n>          | select command | flatten<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>           | get command<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>           | select command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>           | select command<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>           | select command | get command<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>           | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim
+carapace _carapace nushell | save --force "~/.cache/carapace/init.nu"<\n>
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           | do
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           | sys
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           | each {|cmd| sys $cmd }
+ls
+ls -all | wheree name == .git
+ls -all | where name == .git
+rm .git
+rm -rf .git
+c
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           | each {|cmd| sys $cmd }
+history<\n>            | get command<\n>            | fzf<\n>            | decode utf-8 | str trim<\n>            | each {|cmd| sys cmd $cmd }
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           | sys
+nunu
+c
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           | do
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           | <\n>
+history<\n>           | get command<\n>           | fzf<\n>           | decode utf-8 | str trim<\n>           
+history<\n>           | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim
+history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim<\n>          | do {clone $it}
+history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim<\n>          | do 
+do (history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim)
+do {(history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim)}
+sys {(history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim)}
+history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim }
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim | into int }
+nz
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim }
+l
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim }
+ls
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim }
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 }
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf<\n>          | decode utf-8 | str trim }
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf}
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf }
+c
+do {<\n>          history<\n>          | get command | to text<\n>          | fzf }
+sys {<\n>          history<\n>          | get command | to text<\n>          | fzf }
+print ( history<\n>          | get command | to text<\n>          | fzf )
+let cmd = history | get command | to text | fzf ; do $cmd
+let cmd = history | get command | to text | fzf {}; do $cmd
+let cmd = history | get command | to text | fzf {||}; do $cmd
+cd notes
+ls | get name | to text
+cd
+ls **/* | where type == dir | get name | to text
+zoxide add (ls **/* | where type == dir | get name | to text)
+c
+n
+cd notes
+cd
+ff | dc
+dc
+docker ps
+docker ps | dc
+docker ps --all 
+cd todo
+y
+n interface.md
+env 
+env  | rg fzf
+env | where name =~ "FZF"
+env | fzf
+env | rg fzf
+env | rg -i fzf
+table --list
