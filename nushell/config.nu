@@ -29,6 +29,18 @@ alias rd = yay -Rd --nodeps
 alias scc = yay -Scc
 alias yps = yay -Ps
 
+def re [] {
+    yay -Qq | fzf -m --preview 'yay -Qi {1}' --tmux 80% | xargs -ro yay -Rns
+}
+
+def in [] {
+    yay -Slq | fzf -m --preview 'yay -Si {1}' --tmux 80% | xargs -ro yay -S --noconfirm
+}
+
+def pacman_list [] {
+    pacman -Q | lines | split column " " | select column1 column2 | rename package version
+}
+
 # nvim
 alias n = nvim
 alias se = sudoedit
