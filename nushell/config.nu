@@ -89,4 +89,3 @@ alias c = clear
 
 source ~/.config/nushell/functions/system.nu
 source ~/.config/nushell/functions/docker.nu
-source ~/.config/nushell/menus.nu
