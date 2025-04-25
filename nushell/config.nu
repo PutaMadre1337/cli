@@ -60,7 +60,6 @@ alias srmrf = sudo rm -rf
 alias rmrf = rm -rf
 
 # other
-alias hf = hyperfine
 alias wstop = sudo waydroid session stop and sudo waydroid container stop
 alias lr = lazydocker
 alias ten = trans en:ru -e bing
