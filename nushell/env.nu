@@ -34,10 +34,14 @@ $env.config = {
   ]
 }
 
-def count_files [] {
+def count_objects [] {
   let files = (ls | where type == file);
   let file_count = $files | length;
-  return ("Files: " + ($file_count | to text))
+
+  let dirs = (ls | where type == dir);
+  let dir_count = $dirs | length;
+
+  return (" Files: " + ($file_count | to text) + "   " + " Directoryes: " + ($dir_count | to text));
 }
 
 def create_left_prompt [] {
@@ -46,7 +50,7 @@ def create_left_prompt [] {
 
 $env.STARSHIP_SHELL = "nu"
 $env.PROMPT_COMMAND = { create_left_prompt }
-$env.PROMPT_COMMAND_RIGHT = { count_files }
+$env.PROMPT_COMMAND_RIGHT = { count_objects }
 
 $env.PROMPT_INDICATOR = ""
 $env.PROMPT_INDICATOR_VI_INSERT = ""
