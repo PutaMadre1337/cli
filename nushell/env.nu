@@ -41,7 +41,7 @@ def count_objects [] {
   let dirs = (ls | where type == dir);
   let dir_count = $dirs | length;
 
-  return (" Files: " + ($file_count | to text) + "   " + " Directoryes: " + ($dir_count | to text));
+  return (" Files: " + ($file_count | to text) + "   " + " Directories: " + ($dir_count | to text));
 }
 
 def create_left_prompt [] {
