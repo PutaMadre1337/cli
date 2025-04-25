@@ -14,15 +14,14 @@ $env.config = {
       name: change_dir_with_fzf
       modifier: CONTROL
       keycode: Char_c
-      mode: [ vi_insert vi_normal ]
+      mode: [ emacs vi_insert vi_normal ]
       event:[
           { edit: Clear }
           { edit: InsertString,
-            value: "cd (ls
-          | where type == dir
+            value: "cd (ls | where type == dir
           | each { |row| $row.name}
           | str join (char nl)
-          | fzf --preview 'ls --short-names {}'
+          | fzf --height=30% --preview 'ls --short-names {}'
           | decode utf-8 | str trim)"
           }
           { send: Enter }
