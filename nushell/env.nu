@@ -20,6 +20,17 @@ $env.config = {
         cmd: "cd (ls | where type == dir | each { |row| $row.name} | str join (char nl) | fzf --height=30% --preview 'ls --short-names {}' | decode utf-8 | str trim)"
       }
     }
+
+    {
+      name: change_dir_with_zoxide_history
+      modifier: CONTROL
+      keycode: Char_x
+      mode: [ emacs vi_insert vi_normal ]
+      event: {
+        send: executehostcommand,
+        cmd: "zi"
+      }
+    }
   ]
 }
 
