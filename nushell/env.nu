@@ -31,6 +31,18 @@ $env.config = {
         cmd: "zi"
       }
     }
+
+    {
+      name: serch_notes
+      modifier: CONTROL
+      keycode: Char_g
+      mode: [ emacs vi_insert vi_normal ]
+      event: {
+        send: executehostcommand,
+        cmd: "fd --type file . --extension md ~/Documents/Notes
+        | fzf --preview 'mdcat {} | fold -sw (tput cols)' --multi --bind 'ctrl-o:execute(nvim {+})'"
+      }
+    }
   ]
 }
 
