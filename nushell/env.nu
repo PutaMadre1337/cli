@@ -17,18 +17,18 @@ $env.config = {
       mode: [ emacs vi_insert vi_normal ]
       event: {
         send: executehostcommand,
-        cmd: "cd (ls | where type == dir | each { |row| $row.name} | str join (char nl) | fzf --height=30% --preview 'ls --short-names {}' | decode utf-8 | str trim)"
+        cmd: "cd (ls **/** | where type == dir | each { |row| $row.name} | str join (char nl) | rg -v target | fzf --preview 'ls --short-names {}' | decode utf-8 | str trim)"
       }
     }
 
     {
-      name: change_dir_with_zoxide_history
+      name: search_files_with_fzf
       modifier: CONTROL
       keycode: Char_x
       mode: [ emacs vi_insert vi_normal ]
       event: {
         send: executehostcommand,
-        cmd: "zi"
+        cmd: "cd (ls **/* | where type == file | each { |row| $row.name} | str join (char nl) | rg -v -i 'target|\\.png$|\\.gif$|\\.jpg$|\\.zip$|\\.tar|\\.mp4$' | fzf --preview 'bat --style=numbers --color always {}' | decode utf-8 | str trim)"
       }
     }
 
@@ -39,8 +39,7 @@ $env.config = {
       mode: [ emacs vi_insert vi_normal ]
       event: {
         send: executehostcommand,
-        cmd: "fd --type file . --extension md ~/Documents/Notes
-        | fzf --preview 'mdcat {} | fold -sw (tput cols)' --multi --bind 'ctrl-o:execute(nvim {+})'"
+        cmd: "fdnote"
       }
     }
   ]
@@ -72,6 +71,8 @@ $env.PROMPT_MULTILINE_INDICATOR = "::: "
 # $env.PROMPT_INDICATOR_VI_NORMAL = "󰂵  "
 
 $env.EDITOR = "nvim"
+
+$env.PATH = ($env.PATH | append /home/username/.local/share/go/bin)
 
 $env.FZF_DEFAULT_OPTS = '--bind ctrl-b:preview-up,ctrl-f:preview-down,ctrl-d:half-page-down,ctrl-u:half-page-up --prompt="❯ " --marker="󰣉 "'
 

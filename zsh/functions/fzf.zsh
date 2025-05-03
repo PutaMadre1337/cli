@@ -12,16 +12,7 @@ function rf() {
       --multi --bind 'ctrl-o:execute(nvim {+})'
 }
 
-function note() {
-  fd -t file . ~/Documents/ |
-    fzf --ansi \
-        --tmux 80% \
-        --preview 'mdcat {1}' \
-        --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-        --multi --bind 'ctrl-o:execute(nvim {+})' \
-}
-
-function in() {
+junction in() {
     yay -Slq | fzf -q "$1" -m --preview 'yay -Si {1}' --tmux 80% | xargs -ro yay -S --noconfirm
 }
 

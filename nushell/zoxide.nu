@@ -68,10 +68,3 @@ alias zi = __zoxide_zi
 #   source ~/.zoxide.nu
 #
 # Note: zoxide only supports Nushell v0.89.0+.
-
-let zoxide_completer = {|spans|
-    $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
-}
-
-alias cd = __zoxide_z
-alias cdi = zi

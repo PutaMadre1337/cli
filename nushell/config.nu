@@ -1,25 +1,5 @@
 fastfetch
 
-source ~/.cache/carapace/init.nu
-
-source ~/.config/nushell/app/zoxide.nu
-let zoxide_completer = {|spans|
-    $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
-}
-
-alias cd = __zoxide_z
-alias cdi = zi
-
-def --env y [...args] {
-	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
-	yazi ...$args --cwd-file $tmp
-	let cwd = (open $tmp)
-	if $cwd != "" and $cwd != $env.PWD {
-		cd $cwd
-	}
-	rm -fp $tmp
-}
-
 # packages
 alias dw =  yay -S --noconfirm
 alias rns = yay -Rns --noconfirm
@@ -54,7 +34,6 @@ alias cr = cargo run -q
 alias cn = cargo new --vcs git
 
 # directory navigation shortcuts
-alias wstop = sudo waydroid session stop and sudo waydroid container stop
 alias mkd = mkdir
 alias srmrf = sudo rm -rf
 alias rmrf = rm -rf
@@ -82,3 +61,10 @@ alias c = clear
 source ~/.config/nushell/functions/system.nu
 source ~/.config/nushell/functions/docker.nu
 source ~/.config/nushell/functions/packages.nu
+source ~/.config/nushell/functions/golang.nu
+source ~/.config/nushell/functions/notes.nu
+source ~/.config/nushell/functions/common.nu
+
+source ~/.config/nushell/app/zoxide.nu
+source ~/.config/nushell/app/yazi.nu
+source ~/.cache/carapace/init.nu

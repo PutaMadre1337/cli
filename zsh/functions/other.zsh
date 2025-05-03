@@ -7,3 +7,16 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+function nf() {
+  nvim $(fd --type file "$@")
+}
+
+function take {
+  mkdir -p "$@"
+  if [[ "$1" == *\{*\} ]]; then
+    cd "$(echo "$1" | cut -d'{' -f1)"
+  else
+    cd "$(dirname "$1")"
+  fi
+}

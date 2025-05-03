@@ -30,6 +30,7 @@ SAVEHIST=999999999999
 setopt SHARE_HISTORY
 
 source ~/.cli/zsh/functions/fzf.zsh
+source ~/.cli/zsh/functions/notes.zsh
 source ~/.cli/zsh/functions/autocmd.zsh
 source ~/.cli/zsh/functions/other.zsh
 source ~/.cli/zsh/functions/system.zsh
@@ -161,5 +162,6 @@ alias s='sudo'
 alias siy='sudo -i yazi $(pwd)'
 alias x='chmod +x'
 alias sx='sudo chmod +x'
+alias c='clear'
 
 # zprof

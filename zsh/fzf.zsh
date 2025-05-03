@@ -17,7 +17,7 @@ export FZF_ALT_C_OPTS="
   --header 'C-o to open nvim, C-r to remove'
   --multi --bind 'ctrl-r:become(rm -rf {+})'
   --multi --bind 'ctrl-o:execute(nvim {+})'
-  --preview 'nim -f name-line {}'"
+  --preview 'eza --tree --icons always --level 4 {}'"
 
 export FZF_COMPLETION_OPTS='--border --info=rounded'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
@@ -25,6 +25,6 @@ export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
 export FZF_DEFAULT_OPTS='--bind ctrl-b:preview-up,ctrl-f:preview-down,ctrl-d:half-page-down,ctrl-u:half-page-up
 --prompt="❯ " --marker="󰣉 "'
 
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=auto --tree $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'nu -c ls $realpath'
 zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'bat -n --color=always $realpath'
 zstyle ':fzf-tab:complete:y:*' fzf-preview 'eza --icons=auto --tree $realpath'
