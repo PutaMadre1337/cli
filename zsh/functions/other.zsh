@@ -20,3 +20,11 @@ function take {
     cd "$(dirname "$1")"
   fi
 }
+
+function cloc {
+  if [ "$1" != "--help" ]; then
+    command cloc --md "$@" | mdcat
+  else
+    command cloc --help
+  fi
+}

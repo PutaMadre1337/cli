@@ -9,18 +9,22 @@ else
     compinit -C;
 fi
 
-fastfetch
+if [ "$TERM" = "xterm-kitty" ];then
+  fastfetch
+else
+  fastfetch --logo arch2
+fi
 
 ####################################################################################
 
-# if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
-#   tmux attach || exec tmux new-session && exit;
-# fi
+if [[ -z "$TMUX" && "$TERM" = "xterm-256color" ]]; then
+  tmux new-session && exit;
+fi
 
 ####################################################################################
 
 export EDITOR="nvim"
-export PATH="$PATH:/home/username/.local/share/go/bin:/home/username/.local/share/bin"
+export PATH="$PATH:$HOME.local/share/go/bin:/.local/share/bin:$HOME/.config/hypr/scripts"
 
 ####################################################################################
 
@@ -58,13 +62,11 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^O" edit-command-line
 
-bindkey -r '^L'
-bindkey '^L' delete-char
-
 bindkey '^g' fzf-man-widget
 zle -N fzf-man-widget
 
-bindkey -v
+# Vi mappings
+# bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^U' backward-kill-line
@@ -121,13 +123,14 @@ alias se='sudoedit'
 alias nh='fd ~/.config/hypr | fzf'
 alias nz='nvim ~/.zshrc'
 alias nt='nvim ~/.tmux.conf && tmux source-file ~/.tmux.conf'
+alias nn='n ~/.config/niri/config.kdl'
 
 # git
 alias lg='lazygit'
 alias of='onefetch'
 
 # python
-alias mkv='python3 -m venv .venv'
+alias mkv='python3 -m venv .venv && source .venv/bin/activate'
 alias rmv='rm -rf .venv'
 alias freeze='pip freeze > requirements.txt'
 
@@ -163,5 +166,7 @@ alias siy='sudo -i yazi $(pwd)'
 alias x='chmod +x'
 alias sx='sudo chmod +x'
 alias c='clear'
+alias switchkb='hyprctl switchxkblayout by-tech-gaming-keyboard next'
+alias tkb='tmux list-keys | fzf'
 
 # zprof
