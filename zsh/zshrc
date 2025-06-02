@@ -66,7 +66,7 @@ bindkey '^g' fzf-man-widget
 zle -N fzf-man-widget
 
 # Vi mappings
-# bindkey -v
+bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^U' backward-kill-line
@@ -120,7 +120,6 @@ alias yps='yay -Ps'
 # nvim
 alias n='nvim'
 alias se='sudoedit'
-alias nh='fd ~/.config/hypr | fzf'
 alias nz='nvim ~/.zshrc'
 alias nt='nvim ~/.tmux.conf && tmux source-file ~/.tmux.conf'
 alias nn='n ~/.config/niri/config.kdl'

@@ -23,7 +23,7 @@ function take {
 
 function cloc {
   if [ "$1" != "--help" ]; then
-    command cloc --md "$@" | mdcat
+    command cloc --md "$@" | tail -n +4 | mdcat
   else
     command cloc --help
   fi
